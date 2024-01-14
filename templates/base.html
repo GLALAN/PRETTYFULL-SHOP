@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PRETTYFULL-SHOP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+      <a href="{% url 'index' %}">
+        <h1>PRETTYFULL-SHOP</h1>
+      </a>
+      {% if user.is_authenticated %}
+         {{ user.username }}
+
+      <a href="{% url 'logout' %}">
+         Déconnexion
+      </a>
+      {% else %}
+         <p>
+           <a href="{% url 'login' %}">
+            Connexion
+           </a>
+         </p>
+         <p>
+           <a href="{% url 'signup' %}">
+             S'inscrire
+           </a>
+         </p>
+      {% endif %}
+
+      {% if user.cart %}
+          <p>
+             <a href="{% url 'cart' %}">
+                Voir le panier ({{ user.cart.orders.count }})
+             </a>
+          </p>
+      {% endif %}
+
+      {% block content %}
+      {% endblock content %}
+</body>
+
+</html>
+
+
+
+
+
