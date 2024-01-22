@@ -1,27 +1,225 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %} {% load static%}
 <div class="row">
-    <div class="col-md-12">
-        <form action="" class="card card-sm">
-            <div class="card-body row no-gutters align-items-center">
-                <div class="col">
-                   <input type="search" class="form-control form-control-borderless" name="item-name" id="">
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-success" >Rechercher</button>
-                </div>
+  <div class="col-md-6 mx-auto align-items-center">
+    <form action="" class="card card-sm p-3">
+      <div class="card-body row no-gutters align-items-center">
+        <div class="col">
+          <input
+            type="search"
+            class="form-control form-control-borderless"
+            name="item-name"
+            id=""
+          />
+        </div>
+        <div class="col-auto">
+          <!-- <button type="submit" class="btn btn-success" >Rechercher</button> -->
+          <i class="bx bx-search bx-2x"></i>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div
+  id="template-mo-zay-hero-carousel"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <ol class="carousel-indicators">
+    <li
+      data-bs-target="#template-mo-zay-hero-carousel"
+      data-bs-slide-to="0"
+      class="active"
+    ></li>
+    <li
+      data-bs-target="#template-mo-zay-hero-carousel"
+      data-bs-slide-to="1"
+    ></li>
+    <li
+      data-bs-target="#template-mo-zay-hero-carousel"
+      data-bs-slide-to="2"
+    ></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row p-5">
+          <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+            <img
+              class="img-fluid"
+              src="{% static 'images/banner1.png'%}"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-6 mb-0 d-flex align-items-center">
+            <div class="text-align-left align-self-center">
+              <h1 class="h1 text-success"><b>Prettyfull</b> shop</h1>
+              <h3 class="h2">Because you are pretty</h3>
+              <p>Chez Nous c'est satisfait ou remboursé</p>
             </div>
-        </form>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row p-5">
+          <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+            <img
+              class="img-fluid"
+              src="{% static 'images/banner2.png'%}"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-6 mb-0 d-flex align-items-center">
+            <div class="text-align-left">
+              <h1 class="h1">Proident occaecat</h1>
+              <h3 class="h2">Aliquip ex ea commodo consequat</h3>
+              <p>
+                You are permitted to use this Zay CSS template for your
+                commercial websites. You are <strong>not permitted</strong> to
+                re-distribute the template ZIP file in any kind of template
+                collection websites.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row p-5">
+          <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+            <img
+              class="img-fluid"
+              src="{% static 'images/banner4.jpg'%}"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-6 mb-0 d-flex align-items-center">
+            <div class="text-align-left">
+              <h1 class="h1">Repr in voluptate</h1>
+              <h3 class="h2">Ullamco laboris nisi ut</h3>
+              <p>
+                We bring you 100% free CSS templates for your websites. If you
+                wish to support TemplateMo, please make a small contribution via
+                PayPal or tell your friends about our website. Thank you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev text-decoration-none w-auto ps-3"
+    href="#template-mo-zay-hero-carousel"
+    role="button"
+    data-bs-slide="prev"
+  >
+    <i class="fas fa-chevron-left"></i>
+  </a>
+  <a
+    class="carousel-control-next text-decoration-none w-auto pe-3"
+    href="#template-mo-zay-hero-carousel"
+    role="button"
+    data-bs-slide="next"
+  >
+    <i class="fas fa-chevron-right"></i>
+  </a>
 </div>
 
-{% for product in products %}
+<!-- categories -->
+<section class="container py-5">
+  <div class="row text-center pt-3">
+    <div class="col-lg-6 m-auto">
+      <h1 class="h1">Nos Produits</h1>
+      <p>
+        Explorez notre gamme de catégories variées, allant des vêtements aux
+        accessoires, pour trouver l'expression parfaite de votre style personnel
+        sur
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 p-5 mt-3">
+      <a href="#"
+        ><img
+          src="{% static 'images/sac.png'%}"
+          class="rounded-circle img-fluid border"
+      /></a>
+      <h5 class="text-center mt-3 mb-3">Sacs</h5>
+      <p class="text-center"><a class="btn btn-success">Voir </a></p>
+    </div>
+    <div class="col-12 col-md-4 p-5 mt-3">
+      <a href="#"
+        ><img
+          src="{% static 'images/chaussures.png'%}"
+          class="rounded-circle img-fluid border"
+      /></a>
+      <h2 class="h5 text-center mt-3 mb-3">Chaussures</h2>
+      <p class="text-center"><a class="btn btn-success">Voir</a></p>
+    </div>
+    <div class="col-12 col-md-4 p-5 mt-3">
+      <a href="#"
+        ><img
+          src="{% static 'images/meches.png'%}"
+          class="rounded-circle img-fluid border"
+      /></a>
+      <h2 class="h5 text-center mt-3 mb-3">Meches</h2>
+      <p class="text-center"><a class="btn btn-success">Voir</a></p>
+    </div>
+  </div>
+</section>
+<div class="container py-5">
+  <div class="row">
+    {% for product in products %}
+    <div class="col-md-4">
+      <div class="card mb-4 product-wap rounded-0">
+        <div class="card rounded-0">
+          <img
+            class="card-img rounded-0 img-fluid"
+            src="{{ product.thumbnail.url }}"
+            style="width: ;height: 400px;"
+          />
+          <div
+            class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center"
+          >
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  class="btn btn-success text-white mt-2"
+                  href="{{ product.get_absolute_url }}"
+                  ><i class="bx bx-low-vision"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="btn btn-success text-white mt-2"
+                  href="{% url 'add_to_cart' product.slug %}"
+                  ><i class="bx bx-cart-add"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-body">
+          <a href="shop-single.html" class="h3 text-decoration-none"
+            >{{ product.name }}</a
+          >
+
+          <p class="text-center mb-0">{{ product.price }} fcfa</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- {% for product in products %}
 
 <h2>{{ product.name }}</h2>
 <img src="{{ product.thumbnail.url }}" alt="{{ product.name }}" style="max-width: 150px;">
 <a href="{{ product.get_absolute_url }}">Voire l'article</a>
-{% endfor %}
-
+{% endfor %} -->
 
 {% endblock content %}

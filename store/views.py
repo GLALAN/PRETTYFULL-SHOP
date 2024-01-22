@@ -45,3 +45,8 @@ def delete_cart(request):
         cart.delete()
 
     return redirect('index')
+def about(request):
+    return render(request, 'store/about.html')
+
+def about(request):
+    return render(request, 'store/contact.html')
